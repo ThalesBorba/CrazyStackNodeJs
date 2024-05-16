@@ -1,0 +1,23 @@
+{
+    "name": "barberix",
+    "version": "1.0.0",
+    "description": "Sistema completo de agendamentos online do bootcamp CrazyStack",
+    "main": "index.js",
+    "repository": "https://github.com/gumiranda/CrazyStackNodeJs.git",
+    "author": "imartytk@Hotmail.com",
+    "scripts": {
+        "test": "jest --passWithNoTests --silent -noStackTrace --runInBand"
+    },
+    "license": "MIT",
+    "devDependencies": {
+        "@types/jest": "^29.5.12",
+        "dotenv": "^16.4.5",
+        "jest": "^29.7.0",
+        "jest-mock-extended": "^3.0.7",
+        "ts-jest": "^29.1.2",
+        "typescript": "^5.4.5"
+    },
+    "_moduleAliases": {
+        "@": "dist"
+    }
+}
