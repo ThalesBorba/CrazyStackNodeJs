@@ -1,0 +1,48 @@
+import { {{pascalCase name}}Entity } from "./{{camelCase name}}Entity";
+import MockDate from "mockdate";
+
+export const fake{{pascalCase name}}Entity = {
+    _id: "123",
+    createdById: "123",
+    name: "test",
+    active: true,
+    createdAt: new Date(),
+    updatedAt: new Date(),
+};
+
+export const fake{{pascalCase name}}Paginated = {
+    {{camelCase}}s: [
+        fake{{pascalCase name}}Entity, 
+        fake{{pascalCase name}}Entity,
+        fake{{pascalCase name}}Entity,
+        fake{{pascalCase name}}Entity,
+        fake{{pascalCase name}}Entity,
+        fake{{pascalCase name}}Entity,
+        fake{{pascalCase name}}Entity,
+        fake{{pascalCase name}}Entity,
+        fake{{pascalCase name}}Entity,
+        fake{{pascalCase name}}Entity,
+        fake{{pascalCase name}}Entity
+    ],
+    total: 11
+}
+
+describe("{{pascalCase name}}", () => {
+    beforeAll(async() => {
+        MockDate.set(new Date());
+    });
+    afterAll(async() => {
+        MockDate.reset();
+    });
+    it("can be created", () => {
+        const obj = new {{pascalCase name}}Entity(fake{{pascalCase name}}Entity);
+        expect(obj).toBeTruthy();
+        expect(obj).toEqual({
+            ...fake{{pascalCase name}}Entity,
+            _id:undefined,
+            active: false,
+            createdAt: new Date(),
+            updatedAt: new Date()
+        });
+    });
+});
